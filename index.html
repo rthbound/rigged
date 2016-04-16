@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<link rel="apple-touch-icon" sizes="57x57" href="assets/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="assets/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="assets/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="asssets/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="asssets/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="asssets/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="asssets/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="assets/manifest.json">
+	<link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="apple-mobile-web-app-title" content="#superrigged">
+	<meta name="application-name" content="#superrigged">
+	<meta name="msapplication-TileColor" content="#55b0e6">
+	<meta name="msapplication-TileImage" content="assets/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/styles.min.css">
+	<meta name="title" content="The superdelegate system in the Democratic Party is #superrigged">
+	<meta name="keywords" content="superdelegate, hillary clinton, bernie sanders, delegate count, feelthebern, a future to believe in">
+	<meta name="description" content="The superdelegate system in the Democratic Party is rigged. But what’s more important, it is rigging perception about the state of Democratic race.">
+	<meta property="og:sitename" content="#superrigged">
+	<meta property="og:title" content="#superrigged | The superdelegate system in the Democratic Party is rigged and absolutely undemocratic">
+	<meta property="og:url" content="https://superrigged.github.io/">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:description" content="The superdelegate system in the Democratic Party is rigged. But what’s more important, it is rigging perception about the state of Democratic race.">
+	<meta charset="UTF-8">
+	<title>#superrigged | The superdelegate system in the Democratic Party is rigged and absolutely undemocratic</title>
+</head>
+<body>
+<div class="b-top"></div>
+<div class="b-wrapper">
+	<h1 class="b-title"><span>The superdelegate system in the Democratic Party is rigged and absolutely undemocratic.</span></h1>
+	<h2 class="b-subtitle">But what’s more important, it is rigging perception about the state of this race.</h2>
+	<!-- ko if:diff -->
+	<div class="b-graph">
+		<div class="b-graph-pipe b-graph-pipe_pledged" data-bind="css: { 'b-graph-pipe_secondary':!isReal() }" style="left:42.47%"></div>
+		<div class="b-graph-label b-graph-label_pledged" data-bind="css: { 'b-graph-label_secondary':!isReal() }" style="left:42.47%">2026 pledged delegates to win the nomination.</div>
+		<div class="b-graph-pipe b-graph-pipe_super" data-bind="css: { 'b-graph-pipe_secondary':isReal }" style="left:49.96%"></div>
+		<div class="b-graph-label b-graph-label_super" data-bind="css: { 'b-graph-label_secondary':isReal }" style="left:49.96%">2383 delegates to win, including “superdelegates”.</div>
+		<div class="b-bar b-bar_hill">
+			<!-- ko ifnot:isReal -->
+			<div class="b-bar-icon b-bar-icon_hill b-icon b-icon_hill" data-bind="style: { left:((hill()[0] + hill()[1]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-item b-bar-item_pledged" data-bind="style: { width:(hill()[0] / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_pledged" data-bind="text:hill()[0]" style="left:0">0</div>
+			<div class="b-bar-item b-bar-item_super" data-bind="style: { width:(hill()[1] / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_super" data-bind="style: { left:(hill()[0] / totals()[0] * 100) + '%' }, text:hill()[1]">0</div>
+			<!-- /ko -->
+			<!-- ko if:isReal -->
+			<div class="b-bar-icon b-bar-icon_hill b-icon b-icon_hill" data-bind="style: { left:((hill()[0] + hill()[2]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-item b-bar-item_pledged" data-bind="style: { width:((hill()[0] + hill()[2]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_pledged" data-bind="text:hill()[0] + hill()[2]" style="left:0">0</div>
+			<!-- /ko -->
+		</div>
+		<div class="b-bar b-bar_bern">
+			<!-- ko ifnot:isReal -->
+			<div class="b-bar-icon b-bar-icon_bern b-icon b-icon_bern" data-bind="style: { left:((bern()[0] + bern()[1]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-item b-bar-item_pledged" data-bind="style: { width:(bern()[0] / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_pledged" style="left:0"><span data-bind="text:bern()[0]">0</span> pledged delegates</div>
+			<div class="b-bar-item b-bar-item_super" data-bind="style: { width:(bern()[1] / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_super" data-bind="style: { left:(bern()[0] / totals()[0] * 100) + '%' }"><span data-bind="text:bern()[1]"></span> “superdelegates”</div>
+			<!-- /ko -->
+			<!-- ko if:isReal -->
+			<div class="b-bar-icon b-bar-icon_bern b-icon b-icon_bern" data-bind="style: { left:((bern()[0] + bern()[2]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-item b-bar-item_pledged" data-bind="style: { width:((bern()[0] + bern()[2]) / totals()[0] * 100) + '%' }"></div>
+			<div class="b-bar-value b-bar-value_pledged" style="left:0"><span data-bind="text:bern()[0] + bern()[2]">0</span> pledged delegates</div>
+			<!-- /ko -->
+		</div>
+	</div>
+	<p class="b-paragraph" data-bind="ifnot:isReal">Let’s have a look at the delegate count. Right now Bernie Sanders is <span data-bind="text:diff"></span>. <span data-bind="text:superd"></span></p>
+	<div data-bind="if:isReal">
+		<p class="b-paragraph">If superdelegates followed the will of people, like pledged ones do, Bernie Sanders would’ve been <span data-bind="text:realDiff"></span>. <span data-bind="text:realSuperd"></span></p>
+		<div class="b-call">
+			<button class="b-call-btn" data-bind="click:shareReal"><span>Share this information</span></button>
+			<a class="b-action b-action_call" href="#" data-bind="click:disableReal">Go back to reality.</a>
+		</div>
+	</div>
+	<!-- /ko -->
+</div>
+<table class="b-table" data-bind="visible:results().length > 0">
+	<thead class="b-table-header">
+		<tr class="b-table-heading">
+			<td class="b-table-date b-table-first" rowspan="2">Date</td>
+			<td class="b-table-state" rowspan="2">State</td>
+			<td class="b-table-icon b-table-icon_hill b-icon b-icon_hill" rowspan="2"></td>
+			<th class="b-table-candidate" colspan="2">Hillary Clinton</th>
+			<td class="b-table-icon b-table-icon_bern b-icon b-icon_bern" rowspan="2"></td>
+			<th class="b-table-candidate" colspan="2">Bernie Sanders</th>
+			<td class="b-table-uncommitted" rowspan="2"><abbr title="Uncommitted">Uncom.</abbr></td>
+			<td class="b-table-total b-table-last" rowspan="2">Total</td>
+		</tr>
+		<tr class="b-table-heading">
+			<td>Pledged</td>
+			<td><abbr class="b-table-super" data-bind="css:{ 'b-table-super_stroke':isReal }" title="Superdelegates">Super.</abbr></td>
+			<td>Pledged</td>
+			<td><abbr class="b-table-super" data-bind="css:{ 'b-table-super_stroke':isReal }" title="Superdelegates">Super.</abbr></td>
+		</tr>
+	</thead>
+	<tbody class="b-table-body" data-bind="foreach:results">
+		<tr class="b-table-results" data-bind="css:{ 'b-table-results_future':future }">
+			<td class="b-table-first" data-bind="if:prev"><span data-bind="text:date"></span></td>
+			<th>
+				<span data-bind="text:state"></span>
+				<div class="b-results" data-bind="style:{ display: future ? 'none' : 'block'}">
+					<div class="b-results-bar b-results-bar_hill" data-bind="style:{ width:hill.pct.pledged + '%' }"></div>
+					<div class="b-results-bar b-results-bar_bern" data-bind="style:{ width:bern.pct.pledged + '%' }"></div>
+				</div>
+			</th>
+			<td></td>
+			<td>
+				<div class="b-table-delegates" data-bind="if:!future"><span data-bind="text:hill.pledged">0</span></div>
+				<div class="b-table-percent" data-bind="css:{ 'b-table-percent_won':hill.pct.pledged > bern.pct.pledged }, if:!future"><span data-bind="text:hill.pct.pledged + '%'"></span></div>
+			</td>
+			<td>
+				<div class="b-table-delegates" data-bind="css:{ 'b-table-delegates_stroke':$parent.isReal }, text:hill.super">0</div>
+				<!-- ko ifnot:$parent.isReal -->
+				<div class="b-table-percent" data-bind="css:{ 'b-table-percent_rigged':hill.isRigged }, if:hill.super"><span data-bind="text:hill.pct.super + '%'"></span></div>
+				<!-- /ko -->
+				<!-- ko ifnot:future -->
+				<div data-bind="if:$parent.isReal"><div class="b-table-real"><span data-bind="text:hill.real"></span></div></div>
+				<!-- /ko -->
+			</td>
+			<td></td>
+			<td>
+				<div class="b-table-delegates" data-bind="if:!future"><span data-bind="text:bern.pledged">0</span></div>
+				<div class="b-table-percent" data-bind="css:{ 'b-table-percent_won':bern.pct.pledged > hill.pct.pledged }, if:!future"><span data-bind="text:bern.pct.pledged + '%'"></span></div>
+			</td>
+			<td>
+				<div class="b-table-delegates" data-bind="css:{ 'b-table-delegates_stroke':$parent.isReal }, text:bern.super">0</div>
+				<!-- ko ifnot:$parent.isReal -->
+				<div class="b-table-percent" data-bind="css:{ 'b-table-percent_rigged':bern.isRigged }, if:bern.super"><span data-bind="text:bern.pct.super + '%'"></span></div>
+				<!-- /ko -->
+				<!-- ko ifnot:future -->
+				<div data-bind="if:$parent.isReal"><div class="b-table-real"><span data-bind="text:bern.real"></span></div></div>
+				<!-- /ko -->
+			</td>
+			<td class="b-table-uncommitted">
+				<div data-bind="ifnot:$parent.isReal"><span data-bind="text:uncommitted">0</span></div>
+				<div data-bind="if:$parent.isReal, style: { display:(future && $parent.isReal) ? 'none' : 'block' }">—</div>
+			</td>
+			<td class="b-table-total b-table-last" data-bind="text:total">0</td>
+		</tr>
+	</tbody>
+	<tfoot class="b-table-footer">
+		<tr class="b-table-totals">
+			<td class="b-table-source b-table-first" colspan="3">Source: Wikipedia.</td>
+			<td data-bind="text:hill()[0]">0</td>
+			<td>
+				<div data-bind="ifnot:isReal"><span data-bind="text:hill()[1]"></span></div>
+				<div data-bind="if:isReal"><span data-bind="text:hill()[2]"></span></div>
+			</td>
+			<td></td>
+			<td data-bind="text:bern()[0]">0</td>
+			<td>
+				<div data-bind="ifnot:isReal"><span data-bind="text:bern()[1]"></span></div>
+				<div data-bind="if:isReal"><span data-bind="text:bern()[2]"></span></div>
+			</td>
+			<td class="b-table-uncommitted">
+				<div data-bind="ifnot:isReal"><span data-bind="text:totals()[1]">0</span></div>
+				<div data-bind="if:isReal">—</div>
+			</td>
+			<td class="b-table-total b-table-last" data-bind="text:totals()[0]">0</td>
+		</tr>
+	</tfoot>
+</table>
+<div class="b-wrapper">
+	<!-- ko if:diff -->
+	<div data-bind="ifnot:isReal">
+		<p class="b-paragraph"><span data-bind="text:rigged()[1]">0</span> states’ “superdelegates” already favour Hillary Clinton, even if their state have supported Bernie Sanders in caucus or primary. <span data-bind="if:rigged()[0]">They give latter the same favour only in <span data-bind="text:rigged()[0]">0</span> state<span data-bind="if:rigged()[0] > 1">s</span>.</span></p>
+		<p class="b-paragraph">But what if there was no “superdelegates” and all of these votes were just pledged, like other ones? <strong><a class="b-action" href="#" data-bind="click:enableReal">Take a look.</a></strong></p>
+	</div>
+	<div class="b-share">
+		<p class="b-share-suptitle">Real difference would’ve been <span data-bind="text:realDel"></span>, not <span data-bind="text:fakeDiff"></span>. <span data-bind="text:realSuperd"></span></p>
+		<h1 class="b-share-title"><span>There is really no point in counting and reporting about superdelegate count.</span></h1>
+		<h2 class="b-share-promo">Tell the media that their coverage is <a class="b-twitter" href="https://twitter.com/hashtag/superrigged">#<span>superrigged</span></a>.</h2>
+		<ul class="b-share-links" data-bind="foreach:share">
+			<li><a data-bind="attr: { class:'b-share-btn_' + cl, href:link }, css: { 'b-share-btn':true }" target="_blank"><span class="b-share-link" data-bind="text:name"></span></a></li>
+		</ul>
+	</div>
+	<div class="b-footer">
+		<p>Built with <a class="b-footer-link" href="http://knockoutjs.com/">Knockout</a>. <a href="https://github.com/stjohann/superrigged" class="b-footer-link">Fork this on Github</a>.</p>
+		<p>Made by a Bernie supporter from Russia. Not affiliated nor created by the Bernie Sanders campaign.</p>
+	</div>
+	<!-- /ko -->
+</div>
+<div class="b-bottom"></div>
+<script src="js/scripts.min.js"></script>
+</body>
+</html>
