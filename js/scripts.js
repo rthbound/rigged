@@ -122,6 +122,9 @@ states.name = {
 	'Wyoming': 'WY'
 }
 
+// Shortlink
+var link = 'https://git.io/superrigged';
+
 // JSONP request
 var jsonp = {};
 jsonp.r = null;
@@ -511,22 +514,21 @@ var vm = {
 	share:ko.observableArray([
 		{
 			cl:'twitter',
-			link:'https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location) + '&text=' + getShare('twitter'),
+			link:'https://twitter.com/intent/tweet?url=' + encodeURIComponent(link) + '&text=' + getShare('twitter'),
 			name:'Tweet'
 		},
 		{
 			cl:'facebook',
-			link:'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location),
 			name:'Share on Facebook'
 		},
 		{
 			cl:'tumblr',
-			link:'https://www.tumblr.com/share/link?canonicalUrl=' + encodeURIComponent(window.location) + 'title=#superrigged&content=' + getShare('tumblr'),
+			link:'https://www.tumblr.com/share/link?canonicalUrl=' + encodeURIComponent(link) + '&title=#superrigged&content=' + getShare('tumblr'),
 			name:'Post on Tumblr'
 		},
 		{
 			cl:'google',
-			link:'https://plus.google.com/share?url=' + encodeURIComponent(window.location),
+			link:'https://plus.google.com/share?url=' + encodeURIComponent(link),
 			name:'Share on Google+'
 		}
 	]),
