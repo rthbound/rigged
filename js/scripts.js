@@ -519,6 +519,7 @@ var vm = {
 		},
 		{
 			cl:'facebook',
+			link:'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(link),
 			name:'Share on Facebook'
 		},
 		{
