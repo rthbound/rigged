@@ -86,8 +86,7 @@ p { margin:0 0 0.5rem; }
 .b-table-uncommitted, .b-table-total { text-align:right; }
 
 /* Table results */
-.b-table-results { border-bottom:1px solid #ddd; transition:0.3s; vertical-align:top; }
-.b-table-results_shown { opacity:1; }
+.b-table-results { border-bottom:1px solid #ddd; vertical-align:top; }
 .b-table-results_future { background:#ddd; }
 .b-table-body:hover .b-table-results { opacity:0.5; }
 .b-table-body:hover .b-table-results_future, .b-table-body:hover .b-table-results:hover { opacity:1; }
@@ -95,8 +94,8 @@ p { margin:0 0 0.5rem; }
 .b-table-results > td, .b-table-results > th { padding-bottom:0.5rem; padding-top:0.5rem; position:relative; }
 
 .b-table-percent { display:inline-block; margin:0.25rem -0.5rem; padding:0.1rem 0.5rem; }
-.b-table-percent_won { color:#55b0e6; outline:3px solid; }
-.b-table-percent_rigged { color:#c00; outline:3px solid; }
+.b-table-percent_won { color:#55b0e6; outline:3px solid #55b0e6; }
+.b-table-percent_rigged { color:#c00; outline:3px solid #c00; }
 
 .b-table-delegates_stroke::before { transform:rotate(20deg); }
 
@@ -120,9 +119,10 @@ p { margin:0 0 0.5rem; }
 .b-table-source { font-size:10pt; opacity:0.5; }
 
 /* Hashtag */
-.b-twitter { color:inherit; }
+.b-twitter { color:#082435; }
 .b-twitter:hover { color:#55b0e6; }
-.b-twitter > span { box-shadow:0 0.1em; }
+.b-twitter > span { border-bottom:0.1em solid #082435; transition:0.3s border-bottom-color; }
+.b-twitter:hover > span { border-bottom-color:#55b0e6; }
 
 /* Sharing */
 .b-share { margin-bottom:5rem; }
