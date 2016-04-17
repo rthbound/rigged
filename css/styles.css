@@ -83,6 +83,7 @@ p { margin:0 0 0.5rem; }
 .b-table-super_stroke::before { transform:rotate(10deg); }
 .b-table-super_stroke::before, .b-table-delegates_stroke::before { border-top:4px solid #c00; content:''; margin-top:-2px; left:0; position:absolute; right:0; top:50%; }
 
+.b-table-type { background:#55b0e6; color:#fff; cursor:help; display:inline-block; font-size:10pt; margin-left:0.5rem; padding:0.1rem 0.5rem; user-select:none; }
 .b-table-uncommitted, .b-table-total { text-align:right; }
 
 /* Table results */

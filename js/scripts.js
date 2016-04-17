@@ -221,11 +221,35 @@ function pledged(data){
 			all:0,
 			date:date,
 			pledged:0,
-			super:0
+			super:0,
+			type:{
+				letter:'',
+				name:''
+			}
 		}
 		
 		var count = res[i].querySelector('td:nth-child(3)').firstChild.textContent;
 		count = parseFloat(count);
+
+		var type = res[i].querySelector('td:nth-child(6)').firstChild.textContent;
+		type = type.replace(',','').trim();
+		var t;
+		switch(type){
+			case 'Open caucus':
+			case 'Semi-open caucus':
+			case 'Semi-closed caucus':
+			case 'Closed caucus':
+				t = 'C';
+				break;
+			case 'Open primary':
+			case 'Semi-open primary':
+			case 'Semi-closed primary':
+			case 'Closed primary':
+				t = 'P';
+				break;
+		}
+		d.state[state].type.letter = t;
+		d.state[state].type.name = type;
 
 		var bern = res[i].querySelector('td:nth-child(8)').getAttribute('data-sort-value');
 		var bernDel = res[i].querySelector('td:nth-child(12)').firstChild.textContent;
@@ -330,10 +354,15 @@ function results(){
 		var day = date.getDate();
 		var month = date.getMonth();
 
-		// Is primary over
+		// Is contest over
 		var future = (date > Date.now());
 		self.date = months[month] + ' ' + day;
 		self.future = future;
+
+		// Type of contest
+		self.type = {};
+		self.type.letter = std.type.letter;
+		self.type.name = std.type.name;
 
 		// Calculate percents
 		var bpdpct = Math.round(stb.percent * 10) / 10;

@@ -109,7 +109,7 @@
 		<tr class="b-table-results" data-bind="css:{ 'b-table-results_future':future }">
 			<td class="b-table-first" data-bind="if:prev"><span data-bind="text:date"></span></td>
 			<th>
-				<span data-bind="text:state"></span>
+				<span data-bind="text:state"></span><span class="b-table-type" data-bind="attr: { title:type.name }, text:type.letter"></span>
 				<div class="b-results" data-bind="style:{ display: future ? 'none' : 'block'}">
 					<div class="b-results-bar b-results-bar_hill" data-bind="style:{ width:hill.pct.pledged + '%' }"></div>
 					<div class="b-results-bar b-results-bar_bern" data-bind="style:{ width:bern.pct.pledged + '%' }"></div>
