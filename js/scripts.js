@@ -406,9 +406,10 @@ function results(){
 	var dels = 'delegate' + ((numb > 1) ? 's' : '');
 	var diff = ahead ? 'ahead of Hillary Clinton by ' + numb + ' ' + dels : 'behind Hillary Clinton by ' + numb + ' ' + dels;
 	var sd = ahead ? d.bern.super : d.hill.super;
+	var pd = ahead ? (d.bern.all - d.bern.super - d.hill.all) : (d.hill.all - d.hill.super - d.bern.all);
 	vm.fakeDiff(numb);
 	vm.diff(diff);
-	vm.superd(sd + ' of them are superdelegates.');
+	vm.superd(sd + ' of them are “superdelegates”, ' + pd + ' are pledged.');
 
 	// Calculate real numbers
 	var rahead = (d.bern.pledged + real.bern) > (d.hill.pledged + real.hill);
@@ -416,8 +417,8 @@ function results(){
 	var rpledged = rnumb - (ahead ? (d.bern.pledged - d.hill.pledged) : (d.hill.pledged - d.bern.pledged));
 	var rdels = 'delegate' + ((rnumb > 1) ? 's' : '');
 	var rdiff = rahead ? 'ahead of Hillary Clinton by ' + rnumb + ' ' + rdels : 'behind Hillary Clinton by ' + rnumb + ' ' + rdels;
-	var rsd = rahead ? Math.round(d.bern.super / real.bern * 10) / 10 : Math.round(d.hill.super / real.hill * 10) / 10;
-	var rsuperd = 'Only ' + rpledged + ' more than ' + (ahead ? 'Sanders’' : 'Clinton’s') + ' current lead among the pledged delegates.';
+	var rsd = rahead ? real.bern : real.hill;
+	var rsuperd = (ahead ? 'Sanders’' : 'Clinton’s') + ' support among “superdelegates” would’ve been ' + rsd + ', only ' + rpledged + ' more than ' + (ahead ? 'Clinton’s' : 'Sanders’') + ' support among them.';
 	vm.realDel(rnumb + ' ' + rdels);
 	vm.realDiff(rdiff);
 	vm.realSuperd(rsuperd);
@@ -441,43 +442,43 @@ function smoothScroll(el,duration,callback,context){
 	var easeInOutCubic = function (t) { return t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1 }
 
 	var position = function(start, end, elapsed, duration) {
-	    if (elapsed > duration) return end;
-	    return start + (end - start) * easeInOutCubic(elapsed / duration);
+		if (elapsed > duration) return end;
+		return start + (end - start) * easeInOutCubic(elapsed / duration);
 	}
 
-    duration = duration || 500;
-    context = context || window;
-    var start = window.pageYOffset;
+	duration = duration || 500;
+	context = context || window;
+	var start = window.pageYOffset;
 
-    if (typeof el === 'number') {
-      var end = parseInt(el);
-    } else {
-      var end = getTop(el);
-    }
+	if (typeof el === 'number') {
+	  var end = parseInt(el);
+	} else {
+	  var end = getTop(el);
+	}
 
-    var clock = Date.now();
-    var requestAnimationFrame = window.requestAnimationFrame ||
-        window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
-        function(fn){window.setTimeout(fn, 15);};
+	var clock = Date.now();
+	var requestAnimationFrame = window.requestAnimationFrame ||
+		window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
+		function(fn){window.setTimeout(fn, 15);};
 
-    var step = function(){
-        var elapsed = Date.now() - clock;
-        if (context !== window) {
-        	context.scrollTop = position(start, end, elapsed, duration);
-        }
-        else {
-        	window.scroll(0, position(start, end, elapsed, duration));
-        }
+	var step = function(){
+		var elapsed = Date.now() - clock;
+		if (context !== window) {
+			context.scrollTop = position(start, end, elapsed, duration);
+		}
+		else {
+			window.scroll(0, position(start, end, elapsed, duration));
+		}
 
-        if (elapsed > duration) {
-            if (typeof callback === 'function') {
-                callback(el);
-            }
-        } else {
-            requestAnimationFrame(step);
-        }
-    }
-    step();
+		if (elapsed > duration) {
+			if (typeof callback === 'function') {
+				callback(el);
+			}
+		} else {
+			requestAnimationFrame(step);
+		}
+	}
+	step();
 }
 
 function getShare(s){
