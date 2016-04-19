@@ -261,7 +261,7 @@ function pledged(data){
 		hill = parseFloat(hill);
 		hillDel = parseFloat(hillDel);
 
-		if(Date.parse(date) < Date.now()){
+		if(Date.parse(date) < Date.now() && !isNaN(bernDel)){
 			r.bern[state].percent = bern;
 			r.hill[state].percent = hill;
 
@@ -355,7 +355,7 @@ function results(){
 		var month = date.getMonth();
 
 		// Is contest over
-		var future = (date > Date.now());
+		var future = (date.setDate(date.getDate() + 1) > Date.now());
 		self.date = months[month] + ' ' + day;
 		self.future = future;
 
@@ -574,4 +574,4 @@ ko.applyBindings(vm);
 
 // Initialise
 jsonp.load('Results of the Democratic Party presidential primaries, 2016','pledged');
-jsonp.load('List of Democratic Party superdelegates, 2016','superd');
+jsonp.load('List of Democratic Party superdelegates, 2016','superd');f

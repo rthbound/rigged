@@ -20,6 +20,8 @@ p { margin:0 0 0.5rem; }
 
 .b-wrapper { padding:0 5rem; }
 
+.b-noscript { background:#082435; color:#fff; padding:0.5rem 5rem; }
+
 .b-title { font-size:32pt; margin:0; padding:2.5rem 0 1.25rem; }
 .b-title > span { background:#55b0e6; box-decoration-break:clone; box-shadow:-1rem 0 #55b0e6, 1rem 0 #55b0e6, 0 0.5rem #55b0e6, 1rem 0.5rem #55b0e6, -1rem 0.5rem #55b0e6; color:#fff; }
 .b-subtitle { color:#55b0e6; font-size:32pt; margin:0 0 1.25rem; }
